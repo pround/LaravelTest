@@ -22,6 +22,15 @@ Route::any('/', function()
    
 });
 
+Route::any('/aids', function()
+{
+  if(Session::get('message')){
+    return View::make('hello')->with('message', Session::get('message'));
+  }
+  return View::make('hello');
+   
+});
+
 
 
 ?>
